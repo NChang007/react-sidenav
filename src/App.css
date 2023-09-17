@@ -1,0 +1,21 @@
+.sideNav {
+    background-color: red;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+}
+.title {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation {
+    width: 90%;
+}
+.navigation-list {
+    list-style: none;
+}
+.nav-list-item {
+    height: 2rem;
+}
