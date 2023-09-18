@@ -4,10 +4,16 @@
     height: 100vh;
     position: fixed;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .title {
     display: flex;
     justify-content: space-around;
+    padding-block: .5rem;
+    font-size: 2rem;
+    border-bottom: 1px solid white;
 }
 
 .navigation {
@@ -18,4 +24,31 @@
 }
 .nav-list-item {
     height: 2rem;
+}
+
+
+.user-content {
+    box-sizing: border-box;
+    padding: 1rem;
+}
+.user-content {
+    display: flex;
+}
+.user-content .user-avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-inline-end: 1rem;
+}
+.user-content .user-data p {
+    margin: 0;
+}
+.user-content .user-data p:nth-child(1) {
+    border-bottom: 1px solid white;
+}
+
+
+.logout-btn {
+    text-align: center;
 }

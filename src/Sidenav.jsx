@@ -2,6 +2,9 @@ import React from 'react'
 import './App.css'
 
 const SideNav = ({children, position, width}) => {
+    const toggleSideNav = () => {
+
+    }
   return (
     <nav 
         className='sideNav'
@@ -14,7 +17,7 @@ const SideNav = ({children, position, width}) => {
         <div className='title'>
             <span>TITLE</span>
             {/* exit btn */}
-            <span className="OCtoggle">X</span>
+            <span className="OCtoggle" onClick={toggleSideNav} >X</span>
         </div>
         <div className="navigation">
             <ul className='navigation-list'>
@@ -27,25 +30,26 @@ const SideNav = ({children, position, width}) => {
                 <li className='nav-list-item'>
                     <span>Send Email</span>
                 </li>
+                <li className='nav-list-item'>
+                    <span>Another One</span>
+                </li>
             </ul>
         </div>
-        <div className="user-content">
-            <div>
+        <div className="end">
+            <div className="user-content">
                 <img 
+                    className='user-avatar'
                     src="https://images.pexels.com/photos/18184356/pexels-photo-18184356/free-photo-of-south-american-coati-in-nature.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
                     alt="User Profile Picture" 
                 />
-                <div>
+                <div className='user-data'>
                     {/* username */}
-                    <span>TESTUSER123</span>
-                    {/* email */}
-                    <span>testUser123@gmail.com</span>
+                    <p>TESTUSER123</p>
+                    {/* email asd*/}
+                    <p>testUser123@gmail.com</p>
                 </div>
             </div>
-            {/* logout */}
-            <div>
-                <button className='logout-btn'>Logout</button>
-            </div>
+            <button className='logout-btn'>Logout</button>
         </div>
     </nav>
   )
