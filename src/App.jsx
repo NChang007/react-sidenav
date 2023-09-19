@@ -5,7 +5,10 @@ function App() {
 
   return (
     <div className='app'>
-      <SideNav/>
+      <SideNav>
+        <SideNav.Title title={'test'}/>
+        {/* <SideNav.Title title={'test2'}/> */}
+      </SideNav>
     </div>
   )
 }

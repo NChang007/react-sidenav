@@ -3,7 +3,7 @@
     color: white;
     height: 100vh;
     position: fixed;
-    left: 0;
+    /* left: 0; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,4 +51,12 @@
 
 .logout-btn {
     text-align: center;
+}
+
+
+/* we need the sidenav to move outof the way
+so we need to transform translate left or right 
+depending on the position  */
+.toggleSidebarleft {
+
 }

@@ -1,24 +1,43 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import './App.css'
+import { AiOutlineClose } from "react-icons/ai";
 
-const SideNav = ({children, position, width}) => {
-    const toggleSideNav = () => {
+const toggleSideNav = (id) => {
+    document.getElementById(id).classList.toggle(id)
+}
 
-    }
+const SideNavTitle = ({title}) => {
+    return (
+        <div className='title' key={'SideNavTitle'}>
+            <span>{title}</span>
+            {/* exit btn */}
+            <span className="OCtoggle" onClick={() => toggleSideNav(id)}> <AiOutlineClose/> </span>
+        </div>
+    )
+}
+SideNavTitle.defaultProps = {
+    title : 'TITLE'
+}
+SideNavTitle.propTypes = {
+    title : PropTypes.string
+}
+
+
+const SideNav = ({children, position, width, id}) => {
   return (
     <nav 
+        id={id}
         className='sideNav'
         style={{
-            width: '300px',
+            width: width,
             left: position === 'left' ? '0' : '',
-            right: position === 'left' ? '0' : '',
+            right: position === 'right' ? '0' : '',
         }}
     >
-        <div className='title'>
-            <span>TITLE</span>
-            {/* exit btn */}
-            <span className="OCtoggle" onClick={toggleSideNav} >X</span>
-        </div>
+        {children}
+        {/* <SideNav.Title /> */}
+        {/* {console.log(children)} */}
         <div className="navigation">
             <ul className='navigation-list'>
                 <li className='nav-list-item'>
@@ -54,5 +73,18 @@ const SideNav = ({children, position, width}) => {
     </nav>
   )
 }
+SideNav.defaultProps = {
+    id: 'exampleSideNav',
+    width: '300px',
+    position: 'left'
+}
+SideNav.propTypes = {
+    id : PropTypes.string,
+    width : PropTypes.string,
+    position: PropTypes.string
+}
+
+
+SideNav.Title = SideNavTitle
 
 export default SideNav
