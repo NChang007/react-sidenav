@@ -23,21 +23,8 @@ SideNavTitle.propTypes = {
     title : PropTypes.string
 }
 
-
-const SideNav = ({children, position, width, id}) => {
-  return (
-    <nav 
-        id={id}
-        className='sideNav'
-        style={{
-            width: width,
-            left: position === 'left' ? '0' : '',
-            right: position === 'right' ? '0' : '',
-        }}
-    >
-        {children}
-        {/* <SideNav.Title /> */}
-        {/* {console.log(children)} */}
+const SideNavNavigation = ({children}) => {
+    return (
         <div className="navigation">
             <ul className='navigation-list'>
                 <li className='nav-list-item'>
@@ -54,6 +41,30 @@ const SideNav = ({children, position, width, id}) => {
                 </li>
             </ul>
         </div>
+    )
+}
+SideNavNavigation.defaultProps = {
+    // title : 'TITLE'
+}
+SideNavNavigation.propTypes = {
+    // title : PropTypes.string
+}
+
+const SideNav = ({children, position, width, id}) => {
+  return (
+    <nav 
+        id={id}
+        className='sideNav'
+        style={{
+            width: width,
+            left: position === 'left' ? '0' : '',
+            right: position === 'right' ? '0' : '',
+        }}
+    >
+        {children}
+        {/* <SideNav.Title /> */}
+        {/* {console.log(children)} */}
+        
         <div className="end">
             <div className="user-content">
                 <img 
