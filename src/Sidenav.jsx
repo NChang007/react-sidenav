@@ -68,6 +68,7 @@ const SideNav = ({children, position, width, id}) => {
         <div className="navigation">
             <ul className='navigation-list'>
                 <li className='nav-list-item'>
+                    <AiOutlineHome/>
                     <span>Home</span>
                 </li>
                 <li className='nav-list-item'>
@@ -83,6 +84,7 @@ const SideNav = ({children, position, width, id}) => {
                     <span>Contact</span>
                 </li>
                 <li className='nav-list-item'>
+                    <AiOutlineQuestionCircle/>
                     <span>FAQ</span>
                 </li>
             </ul>

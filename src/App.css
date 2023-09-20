@@ -36,7 +36,7 @@
     font-size: 1.4rem;
     font-weight: 500;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .nav-list-item::after {
     content: '';
@@ -45,22 +45,28 @@
     background-color: white;
     width: 3px;
     right: 0;
-    top: 0;
-    translate: var(--_translate, 0);
+    bottom: 0;
+
+    transform: translateY(var(--_translate, 0));
     scale: 1 var(--_scaleY, 0);
     transition: 
-        scale  250ms,
-        translate 250ms
-        ;
+        scale  300ms var(--_scale-delay, 0ms),
+        transform 500ms var(--_translate-delay, 0ms)
+    ;
 }
-.nav-list-item:hover::after {
-    scale: 1 1;
+.nav-list-item:hover,
+.nav-list-item:focus-within {
+    --_scaleY: 1
 }
-.nav-list-item:hover + .nav-list-item::after {
-    translate: -100%;
+.nav-list-item:hover + .nav-list-item {
+    --_translate: -100%;
+    --_scale-delay: 300ms;
+    --_translate-delay: 200ms;
 }
-.nav-list-item:has( + :hover)::after {
-    translate: 100%;
+.nav-list-item:has( + :hover){
+    --_translate: 100%;
+    --_scale-delay: 300ms;
+    --_translate-delay: 200ms;
 }
 
 
