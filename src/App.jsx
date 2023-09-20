@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div className='app'>
-      <SideNav>
+      <SideNav position={'left'} id={'fuck123'}>
         <SideNav.Title title={'test'}/>
         {/* <SideNav.Title title={'test2'}/> */}
       </SideNav>
