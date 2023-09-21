@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import './App.css'
-import { AiOutlineClose, AiOutlineQuestionCircle, AiOutlineHome } from "react-icons/ai";
-import { TbLogout, TbLogout2 } from "react-icons/tb";
+import { AiOutlineClose, AiOutlineQuestionCircle, AiOutlineHome, AiOutlineContacts, AiOutlineInfoCircle} from "react-icons/ai";
+import { TbLogout, TbLogout2, TbLogicAnd } from "react-icons/tb";
+import { IoPricetagOutline } from "react-icons/io";
+
+
 
 const toggleSideNav = (id) => {
     document.getElementById(id).classList.toggle("test")
@@ -72,15 +75,19 @@ const SideNav = ({children, position, width, id}) => {
                     <span>Home</span>
                 </li>
                 <li className='nav-list-item'>
+                    <AiOutlineInfoCircle/>
                     <span>About</span>
                 </li>
                 <li className='nav-list-item'>
+                    <IoPricetagOutline/>
                     <span>Pricing</span>
                 </li>
                 <li className='nav-list-item'>
+                    <TbLogicAnd/>
                     <span>Blog</span>
                 </li>
                 <li className='nav-list-item'>
+                    <AiOutlineContacts/>
                     <span>Contact</span>
                 </li>
                 <li className='nav-list-item'>
