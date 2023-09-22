@@ -35,15 +35,19 @@
 }
 .nav-list-item {
     padding: calc(var(--_gap) / 2);
-    display: flex;
-    gap: 1rem;
-    align-items: center;
     height: 2rem;
     font-size: 1.4rem;
     font-weight: 500;
     position: relative;
     cursor: pointer;
     /* overflow: hidden; */
+}
+.nav-list-item .item-link {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
 }
 .nav-list-item::after {
     content: '';
@@ -115,4 +119,8 @@ so we need to transform translate left or right
 depending on the position  */
 .toggleSidebarleft {
 
+}
+
+.d-none {
+    display: none !important;
 }

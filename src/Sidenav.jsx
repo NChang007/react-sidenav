@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './App.css'
@@ -11,10 +11,16 @@ import { IoPricetagsOutline } from "react-icons/io5";
 
 
 const toggleSideNav = (id) => {
-    document.getElementById(id).classList.toggle("test")
+    document.getElementById(`${id}`).classList.toggle("d-none")
 }
 
 const SideNavTitle = ({title}) => {
+    let nav,id
+    useEffect(() => {
+        nav = document.querySelector('.sideNav')
+        {console.log(nav.id)}
+        id = nav.id.toString()
+    })
     return (
         <div className='title' key={'SideNavTitle'}>
             <span>{title}</span>
@@ -24,7 +30,8 @@ const SideNavTitle = ({title}) => {
     )
 }
 SideNavTitle.defaultProps = {
-    title : 'TITLE'
+    title : 'TITLE',
+    
 }
 SideNavTitle.propTypes = {
     title : PropTypes.string
@@ -34,33 +41,48 @@ const SideNavNavigation = ({children}) => {
     return (
         <div className="navigation">
             <ul className='navigation-list'>
-                <li className='nav-list-item'>
-                    <span>About</span>
-                </li>
-                <li className='nav-list-item'>
-                    <span>Contact</span>
-                </li>
-                <li className='nav-list-item'>
-                    <span>Send Email</span>
-                </li>
-                <li className='nav-list-item'>
-                    <span>Another One</span>
-                </li>
+               {children}
             </ul>
         </div>
     )
 }
-SideNavNavigation.defaultProps = {
-    // title : 'TITLE'
+// SideNavNavigation.defaultProps = {
+//     // title : 'TITLE'
+// }
+// SideNavNavigation.propTypes = {
+//     // title : PropTypes.string
+// }
+
+const NavigationItem = ({iconType, icon, slug, link}) => {
+    return (
+        <li className='nav-list-item'>
+            <Link className='item-link' to={link}>
+                {iconType === 'react-icons'? (`<${icon} className='item-link-icon' />`) : null}
+                {iconType === 'image'? ( <img className='item-link-icon' src={icon} alt="SideNav Navigation Icon" /> ) : null}
+                {iconType === 'faIcons' ( <i class={className='item-link-icon ' + icon}></i> )}
+                <AiOutlineHome/>
+                <span>{slug}</span>
+            </Link>
+        </li>
+    )
 }
-SideNavNavigation.propTypes = {
-    // title : PropTypes.string
+NavigationItem.defaultProps = {
+    iconType : 'react-icons',
+    icon: 'AiOutlineHome',
+    slug: 'Home',
+    link: '/'
+}
+NavigationItem.propTypes = {
+    iconType: PropTypes.oneOf(['react-icons', 'image', 'faIcons']),
+    icon: PropTypes.string,
+    slug: PropTypes.string,
+    link: PropTypes.string
 }
 
 const SideNav = ({children, position, width, id}) => {
   return (
     <nav 
-        id={id}
+        id={"sideNav"+id}
         className='sideNav'
         style={{
             width: width,
@@ -69,38 +91,48 @@ const SideNav = ({children, position, width, id}) => {
         }}
     >
         {children}
-        {/* <SideNav.Title /> */}
-        {/* {console.log(children)} */}
-        {/* <div className="navigation">
+        {console.log(children)}
+        <img src="" alt="" />
+        <div className="navigation">
             <ul className='navigation-list'>
                 <li className='nav-list-item'>
-                    <AiOutlineHome/>
-                    <span>Home</span>
-                </li>
-                <Link to=''>
-                <li className='nav-list-item'>
-                    <AiOutlineInfoCircle/>
-                    <span>About</span>
-                </li>
-                </Link>
-                <li className='nav-list-item'>
-                    <IoPricetagsOutline/>
-                    <span>Pricing</span>
+                    <Link className='item-link' to=''>
+                        <AiOutlineHome />
+                        <span>Home</span>
+                    </Link>
                 </li>
                 <li className='nav-list-item'>
-                    <TbLogicAnd/>
-                    <span>Blog</span>
+                    <Link className='item-link' to=''>
+                        <AiOutlineInfoCircle/>
+                        <span>About</span>
+                    </Link>
                 </li>
                 <li className='nav-list-item'>
-                    <AiOutlineContacts/>
-                    <span>Contact</span>
+                    <Link className='item-link' to=''>
+                        <IoPricetagsOutline/>
+                        <span>Pricing</span>
+                    </Link>
                 </li>
                 <li className='nav-list-item'>
-                    <AiOutlineQuestionCircle/>
-                    <span>FAQ</span>
+                    <Link className='item-link' to=''>
+                        <TbLogicAnd/>
+                        <span>Blog</span>
+                    </Link>
+                </li>
+                <li className='nav-list-item'>
+                    <Link className='item-link' to=''>
+                        <AiOutlineContacts/>
+                        <span>Contact</span>
+                    </Link>
+                </li>
+                <li className='nav-list-item'>
+                    <Link className='item-link' to=''>
+                        <AiOutlineQuestionCircle/>
+                        <span>FAQ</span>
+                    </Link>
                 </li>
             </ul>
-        </div> */}
+        </div>
         <div className="end">
             <div 
                 className="user-content"

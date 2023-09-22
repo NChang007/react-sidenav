@@ -7,6 +7,7 @@ function App() {
     <div className='app'>
       <SideNav position={'left'} id={'fuck123'}>
         <SideNav.Title title={'test'}/>
+        {/* <SideNav.Navigation></SideNav.Navigation> */}
         {/* <SideNav.Title title={'test2'}/> */}
       </SideNav>
     </div>
