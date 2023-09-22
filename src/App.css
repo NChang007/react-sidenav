@@ -1,5 +1,5 @@
 .sideNav {
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     height: 100vh;
     position: fixed;
@@ -11,11 +11,16 @@
 .title {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding-block: .5rem;
     font-size: 2rem;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-
+.OCtoggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .navigation {
     width: 90%;
     height: 100%;
@@ -26,16 +31,18 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    /* row-gap: 4rem; */
+    color: rgba(255, 255, 255, 0.65);
 }
 .nav-list-item {
     padding: calc(var(--_gap) / 2);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
     height: 2rem;
     font-size: 1.4rem;
     font-weight: 500;
     position: relative;
+    cursor: pointer;
     /* overflow: hidden; */
 }
 .nav-list-item::after {
@@ -56,7 +63,8 @@
 }
 .nav-list-item:hover,
 .nav-list-item:focus-within {
-    --_scaleY: 1
+    --_scaleY: 1;
+    color: white;
 }
 .nav-list-item:hover + .nav-list-item {
     --_translate: -100%;
@@ -74,6 +82,8 @@
 .user-content {
     box-sizing: border-box;
     padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 2rem;
 }
 .user-content {
     display: flex;
@@ -95,6 +105,8 @@
 
 .logout-btn {
     text-align: center;
+    outline: none;
+
 }
 
 

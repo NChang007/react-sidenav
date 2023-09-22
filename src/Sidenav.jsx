@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './App.css'
+// logos below
 import { AiOutlineClose, AiOutlineQuestionCircle, AiOutlineHome, AiOutlineContacts, AiOutlineInfoCircle} from "react-icons/ai";
 import { TbLogout, TbLogout2, TbLogicAnd } from "react-icons/tb";
-import { IoPricetagOutline } from "react-icons/io";
+import { IoPricetagsOutline } from "react-icons/io5";
+
 
 
 
@@ -68,18 +71,20 @@ const SideNav = ({children, position, width, id}) => {
         {children}
         {/* <SideNav.Title /> */}
         {/* {console.log(children)} */}
-        <div className="navigation">
+        {/* <div className="navigation">
             <ul className='navigation-list'>
                 <li className='nav-list-item'>
                     <AiOutlineHome/>
                     <span>Home</span>
                 </li>
+                <Link to=''>
                 <li className='nav-list-item'>
                     <AiOutlineInfoCircle/>
                     <span>About</span>
                 </li>
+                </Link>
                 <li className='nav-list-item'>
-                    <IoPricetagOutline/>
+                    <IoPricetagsOutline/>
                     <span>Pricing</span>
                 </li>
                 <li className='nav-list-item'>
@@ -95,7 +100,7 @@ const SideNav = ({children, position, width, id}) => {
                     <span>FAQ</span>
                 </li>
             </ul>
-        </div>
+        </div> */}
         <div className="end">
             <div 
                 className="user-content"
@@ -123,7 +128,7 @@ const SideNav = ({children, position, width, id}) => {
 SideNav.defaultProps = {
     id: 'exampleSideNav',
     width: '300px',
-    position: 'left'
+    position: 'left' // left or right
 }
 SideNav.propTypes = {
     id : PropTypes.string,
