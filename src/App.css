@@ -49,6 +49,11 @@
     text-decoration: none;
     color: inherit;
 }
+.nav-list-item .item-link .item-link-icon {
+    font-size: inherit;
+    color: inherit;
+    
+}
 .nav-list-item::after {
     content: '';
     height: 100%;
