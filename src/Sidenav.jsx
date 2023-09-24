@@ -59,7 +59,7 @@ const NavigationItem = ({iconType, icon, slug, link}) => {
             <Link className='item-link' to={link}>
                 {iconType === 'react-icons'? (`<${icon} className='item-link-icon' />`) : null}
                 {iconType === 'image'? ( <img className='item-link-icon' src={icon} alt="SideNav Navigation Icon" /> ) : null}
-                {iconType === 'faIcons' ( <i class={className='item-link-icon ' + icon}></i> )}
+                {iconType === 'faIcons'? ( <i className={'item-link-icon ' + icon}></i> ): null}
                 <AiOutlineHome/>
                 <span>{slug}</span>
             </Link>
@@ -73,7 +73,7 @@ NavigationItem.defaultProps = {
     link: '/'
 }
 NavigationItem.propTypes = {
-    iconType: PropTypes.oneOf(['react-icons', 'image', 'faIcons']),
+    iconType: PropTypes.oneOf(['react-icons', 'image', 'faIcons']), // supports images react-icons and fontawsome icons
     icon: PropTypes.string,
     slug: PropTypes.string,
     link: PropTypes.string
@@ -170,5 +170,6 @@ SideNav.propTypes = {
 
 SideNav.Title = SideNavTitle
 SideNav.Navigation = SideNavNavigation
+SideNav.NavItem = NavigationItem
 
 export default SideNav
