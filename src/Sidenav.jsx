@@ -57,6 +57,7 @@ const NavigationItem = ({iconType, icon, slug, link}) => {
     return (
         <li className='nav-list-item'>
             <Link className='item-link' to={link}>
+                {console.log(iconType)}
                 {iconType === 'react-icons'? (`<${icon} className='item-link-icon' />`) : null}
                 {iconType === 'image'? ( <img className='item-link-icon' src={icon} alt="SideNav Navigation Icon" /> ) : null}
                 {iconType === 'faIcons'? ( <i className={'item-link-icon ' + icon}></i> ): null}
