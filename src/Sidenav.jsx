@@ -54,14 +54,20 @@ const SideNavNavigation = ({children}) => {
 // }
 
 const NavigationItem = ({iconType, icon, slug, link}) => {
+    console.log("ICONTYPE:", iconType, "ICON", icon)
+    // let reactIco = null 
+    // if (iconType === 'react-icons'){
+    //     reactIco = ( < {icon} className='item-link-icon' />)
+    //     console.log(reactIco);
+    // }
     return (
         <li className='nav-list-item'>
             <Link className='item-link' to={link}>
                 {console.log(iconType)}
-                {iconType === 'react-icons'? (`<${icon} className='item-link-icon' />`) : null}
+                {iconType === 'react-icons'? ( icon ) : null}
                 {iconType === 'image'? ( <img className='item-link-icon' src={icon} alt="SideNav Navigation Icon" /> ) : null}
                 {iconType === 'faIcons'? ( <i className={'item-link-icon ' + icon}></i> ): null}
-                <AiOutlineHome/>
+                {/* <AiOutlineHome/> */}
                 <span>{slug}</span>
             </Link>
         </li>
@@ -69,13 +75,13 @@ const NavigationItem = ({iconType, icon, slug, link}) => {
 }
 NavigationItem.defaultProps = {
     iconType : 'react-icons',
-    icon: 'AiOutlineHome',
+    icon: <TbLogout/>,
     slug: 'Home',
     link: '/'
 }
 NavigationItem.propTypes = {
     iconType: PropTypes.oneOf(['react-icons', 'image', 'faIcons']), // supports images react-icons and fontawsome icons
-    icon: PropTypes.string,
+    icon: PropTypes.element,
     slug: PropTypes.string,
     link: PropTypes.string
 }
