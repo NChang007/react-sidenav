@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './App.css'
 // logos below
-import { AiOutlineClose, AiOutlineQuestionCircle, AiOutlineHome, AiOutlineContacts, AiOutlineInfoCircle} from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
 import { TbLogout, TbLogout2, TbLogicAnd } from "react-icons/tb";
-import { IoPricetagsOutline } from "react-icons/io5";
+// import { IoPricetagsOutline } from "react-icons/io5";
 
 
 
 
 const toggleSideNav = (id) => {
-    document.getElementById(`${id}`).classList.toggle("d-none")
+    document.getElementById(`sideNav${id}`).classList.toggle("d-none")
+    document.getElementById(`toggleBtn`).classList.toggle("d-block")
 }
 
 const SideNavTitle = ({title}) => {
@@ -97,10 +98,11 @@ const SideNav = ({children, position, width, id}) => {
             right: position === 'right' ? '0' : '',
         }}
     >
+        <button className='toggleBtn' onClick={(() => toggleSideNav(id))}><AiOutlineMenu/></button>
         {children}
         {console.log(children)}
-        <img src="" alt="" />
-        <div className="navigation">
+        {/* <img src="" alt="" /> */}
+        {/* <div className="navigation">
             <ul className='navigation-list'>
                 <li className='nav-list-item'>
                     <Link className='item-link' to=''>
@@ -139,7 +141,7 @@ const SideNav = ({children, position, width, id}) => {
                     </Link>
                 </li>
             </ul>
-        </div>
+        </div> */}
         <div className="end">
             <div 
                 className="user-content"

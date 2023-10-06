@@ -122,10 +122,17 @@
 /* we need the sidenav to move out of the way
 so we need to transform translate left or right 
 depending on the position  */
-.toggleSidebarleft {
-
+.toggleBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+    display: none;
 }
 
 .d-none {
     display: none !important;
+}
+.d-block {
+    display: block !important;
 }
