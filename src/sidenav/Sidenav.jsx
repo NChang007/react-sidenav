@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './App.css'
+import './sidenav.css'
 // logos below
 import { AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
 import { TbLogout, TbLogout2, TbLogicAnd } from "react-icons/tb";
@@ -101,47 +101,6 @@ const SideNav = ({children, position, width, id}) => {
         <button className='toggleBtn' onClick={(() => toggleSideNav(id))}><AiOutlineMenu/></button>
         {children}
         {console.log(children)}
-        {/* <img src="" alt="" /> */}
-        {/* <div className="navigation">
-            <ul className='navigation-list'>
-                <li className='nav-list-item'>
-                    <Link className='item-link' to=''>
-                        <AiOutlineHome />
-                        <span>Home</span>
-                    </Link>
-                </li>
-                <li className='nav-list-item'>
-                    <Link className='item-link' to=''>
-                        <AiOutlineInfoCircle/>
-                        <span>About</span>
-                    </Link>
-                </li>
-                <li className='nav-list-item'>
-                    <Link className='item-link' to=''>
-                        <IoPricetagsOutline/>
-                        <span>Pricing</span>
-                    </Link>
-                </li>
-                <li className='nav-list-item'>
-                    <Link className='item-link' to=''>
-                        <TbLogicAnd/>
-                        <span>Blog</span>
-                    </Link>
-                </li>
-                <li className='nav-list-item'>
-                    <Link className='item-link' to=''>
-                        <AiOutlineContacts/>
-                        <span>Contact</span>
-                    </Link>
-                </li>
-                <li className='nav-list-item'>
-                    <Link className='item-link' to=''>
-                        <AiOutlineQuestionCircle/>
-                        <span>FAQ</span>
-                    </Link>
-                </li>
-            </ul>
-        </div> */}
         <div className="end">
             <div 
                 className="user-content"
