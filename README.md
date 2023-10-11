@@ -6,6 +6,7 @@ This is a Sidenav component built with Vite, a fast and minimalist development t
 
 - Easy to use
 - Supports both left and right positions 
+- Has profile section
 - Works with any react app
 - Easy to customize
 
