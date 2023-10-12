@@ -8,6 +8,12 @@
     flex-direction: column;
     justify-content: space-between;
 }
+.sideNav[data-position="left"]{
+    left: 0;
+}
+.sideNav[data-position="right"]{
+    right: 0;
+}
 .title {
     display: flex;
     justify-content: space-around;
@@ -117,6 +123,7 @@
     outline: none;
 
 }
+
 
 
 /* we need the sidenav to move out of the way

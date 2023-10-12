@@ -92,10 +92,9 @@ const SideNav = ({children, position, width, id}) => {
     <nav 
         id={"sideNav"+id}
         className='sideNav'
+        data-position={position}
         style={{
             width: width,
-            left: position === 'left' ? '0' : '',
-            right: position === 'right' ? '0' : '',
         }}
     >
         <button className='toggleBtn' onClick={(() => toggleSideNav(id))}><AiOutlineMenu/></button>
