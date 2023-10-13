@@ -14,6 +14,9 @@
 .sideNav[data-position="right"]{
     right: 0;
 }
+.sideNav[data-position="right"] .user-content{
+    flex-direction: row-reverse;
+}
 .title {
     display: flex;
     justify-content: space-around;
