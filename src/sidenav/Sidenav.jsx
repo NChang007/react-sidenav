@@ -103,9 +103,9 @@ const SideNav = ({children, position, width, id}) => {
         <div className="end">
             <div 
                 className="user-content"
-                style={{
-                    flexDirection: position === 'right' ? 'row-reverse' : ''
-                }}
+                // style={{
+                //     flexDirection: position === 'right' ? 'row-reverse' : ''
+                // }}
             >
                 <img 
                     className='user-avatar'
