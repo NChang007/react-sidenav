@@ -9,6 +9,7 @@ This is a Sidenav component built with Vite, a fast and minimalist development t
 - Has profile section
 - Works with any react app
 - Easy to customize
+- Items support react icons, font awesome icons and images
 
 ## Installation
 
